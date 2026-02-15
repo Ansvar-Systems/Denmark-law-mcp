@@ -1,0 +1,49 @@
+{
+  "$schema": "./golden-hashes.schema.json",
+  "version": "1.0",
+  "mcp_name": "Danish Law MCP",
+  "jurisdiction": "DK",
+  "description": "Drift detection anchors for stable Danish legal provisions. Constitutional and foundational articles that rarely change.",
+  "provisions": [
+    {
+      "id": "dk-hash-001",
+      "description": "Grundloven § 1 — constitutional form of government",
+      "upstream_url": "https://www.retsinformation.dk/eli/lta/1953/169",
+      "selector_hint": "Section 1",
+      "expected_sha256": "COMPUTE_ON_FIRST_RUN",
+      "expected_snippet": "Denne grundlov gælder for alle dele af Danmarks Rige"
+    },
+    {
+      "id": "dk-hash-002",
+      "description": "Grundloven § 3 — separation of powers (lovgivende, udøvende, dømmende)",
+      "upstream_url": "https://www.retsinformation.dk/eli/lta/1953/169",
+      "selector_hint": "Section 3",
+      "expected_sha256": "COMPUTE_ON_FIRST_RUN",
+      "expected_snippet": "lovgivende magt"
+    },
+    {
+      "id": "dk-hash-003",
+      "description": "Grundloven § 67 — freedom of religion (trosfrihed)",
+      "upstream_url": "https://www.retsinformation.dk/eli/lta/1953/169",
+      "selector_hint": "Section 67",
+      "expected_sha256": "COMPUTE_ON_FIRST_RUN",
+      "expected_snippet": "Borgerne har ret til at forene sig"
+    },
+    {
+      "id": "dk-hash-004",
+      "description": "Grundloven § 71 — personal liberty (den personlige frihed)",
+      "upstream_url": "https://www.retsinformation.dk/eli/lta/1953/169",
+      "selector_hint": "Section 71",
+      "expected_sha256": "COMPUTE_ON_FIRST_RUN",
+      "expected_snippet": "Den personlige frihed er ukrænkelig"
+    },
+    {
+      "id": "dk-hash-005",
+      "description": "Grundloven § 77 — freedom of expression (ytringsfrihed)",
+      "upstream_url": "https://www.retsinformation.dk/eli/lta/1953/169",
+      "selector_hint": "Section 77",
+      "expected_sha256": "COMPUTE_ON_FIRST_RUN",
+      "expected_snippet": "Enhver er berettiget til"
+    }
+  ]
+}

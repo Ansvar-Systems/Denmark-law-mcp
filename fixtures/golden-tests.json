@@ -1,0 +1,104 @@
+{
+  "$schema": "./golden-tests.schema.json",
+  "version": "1.0",
+  "mcp_name": "Danish Law MCP",
+  "description": "Golden contract tests for the Danish Law MCP",
+  "tests": [
+    {
+      "id": "dk-001",
+      "category": "article_retrieval",
+      "description": "Retrieve provision from Grundloven (Constitution, LOV nr 169 af 05/06/1953)",
+      "tool": "get_provision",
+      "input": { "document_id": "169/1953", "section": "1" },
+      "assertions": { "result_not_empty": true, "fields_present": ["results"] }
+    },
+    {
+      "id": "dk-002",
+      "category": "article_retrieval",
+      "description": "Retrieve provision from Databeskyttelsesloven (Data Protection Act)",
+      "tool": "get_provision",
+      "input": { "document_id": "502/2018", "section": "1" },
+      "assertions": { "result_not_empty": true, "fields_present": ["results"] }
+    },
+    {
+      "id": "dk-003",
+      "category": "article_retrieval",
+      "description": "Retrieve all provisions of Grundloven",
+      "tool": "get_provision",
+      "input": { "document_id": "169/1953" },
+      "assertions": { "result_not_empty": true, "min_results": 5 }
+    },
+    {
+      "id": "dk-004",
+      "category": "search",
+      "description": "Search for 'personoplysninger' returns data protection results",
+      "tool": "search_legislation",
+      "input": { "query": "personoplysninger" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "dk-005",
+      "category": "search",
+      "description": "Search for 'ansættelsesforhold' returns employment law results",
+      "tool": "search_legislation",
+      "input": { "query": "ansættelsesforhold" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "dk-006",
+      "category": "citation_roundtrip",
+      "description": "Validate a Danish legal citation",
+      "tool": "validate_citation",
+      "input": { "citation": "169/1953 § 1" },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "dk-007",
+      "category": "citation_roundtrip",
+      "description": "Format citation returns standard Danish format",
+      "tool": "format_citation",
+      "input": { "citation": "169/1953 § 3" },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "dk-008",
+      "category": "currency",
+      "description": "Check currency of Grundloven",
+      "tool": "check_currency",
+      "input": { "document_id": "169/1953" },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "dk-009",
+      "category": "eu_cross_reference",
+      "description": "EU basis lookup for Databeskyttelsesloven returns GDPR references",
+      "tool": "get_eu_basis",
+      "input": { "document_id": "502/2018" },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "dk-010",
+      "category": "negative_test",
+      "description": "Non-existent law returns gracefully",
+      "tool": "get_provision",
+      "input": { "document_id": "9999/9999", "section": "1" },
+      "assertions": { "handles_gracefully": true }
+    },
+    {
+      "id": "dk-011",
+      "category": "negative_test",
+      "description": "Search with no results handled gracefully",
+      "tool": "search_legislation",
+      "input": { "query": "xyznonexistentlawterm9999" },
+      "assertions": { "handles_gracefully": true }
+    },
+    {
+      "id": "dk-012",
+      "category": "negative_test",
+      "description": "Invalid citation format handled gracefully",
+      "tool": "validate_citation",
+      "input": { "citation": "not-a-real-citation-12345" },
+      "assertions": { "handles_gracefully": true }
+    }
+  ]
+}

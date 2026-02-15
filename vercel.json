@@ -11,6 +11,7 @@
   },
   "rewrites": [
     { "source": "/mcp", "destination": "/api/mcp" },
-    { "source": "/health", "destination": "/api/health" }
+    { "source": "/health", "destination": "/api/health" },
+    { "source": "/version", "destination": "/api/health" }
   ]
 }

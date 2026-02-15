@@ -36,6 +36,9 @@
     "import:eurlex-documents": "tsx scripts/import-eurlex-documents.ts",
     "migrate:eu-references": "tsx scripts/migrate-eu-references.ts",
     "verify:eu-coverage": "tsx scripts/verify-eu-coverage.ts",
+    "test:contract": "vitest run __tests__/contract/",
+    "drift:detect": "node --import tsx scripts/drift-detect.ts",
+    "validate": "npm run lint && npm test && npm run test:contract",
     "lint": "eslint src tests",
     "prepublishOnly": "npm run build",
     "postinstall": "test -d dist || npm run build || true"

@@ -1,0 +1,27 @@
+schema_version: '1.0'
+mcp_name: 'Danish Law MCP'
+jurisdiction: 'DK'
+
+sources:
+  - name: 'Retsinformation'
+    authority: 'Danish Ministry of Justice (Civilstyrelsen)'
+    official_portal: 'https://www.retsinformation.dk'
+    canonical_identifier: 'LBK/LOV number'
+    retrieval_method: 'API'
+    api_documentation: 'https://www.retsinformation.dk/api'
+    update_frequency: 'daily'
+    last_ingested: '2026-02-14'
+    license_or_terms:
+      type: 'Government Open Data'
+      url: 'https://www.retsinformation.dk/offentliggoerelser/LDA-ophavsret'
+      summary: 'Danish legislation is public domain; free to use'
+    coverage:
+      scope: 'Danish statutes (love, bekendtgørelser, cirkulærer)'
+      limitations: 'Historical consolidations depend on Retsinformation coverage'
+    languages:
+      - 'da'
+
+data_freshness:
+  automated_checks: true
+  check_frequency: 'daily'
+  last_verified: '2026-02-15'
