@@ -1,6 +1,6 @@
 {
   "name": "@ansvar/danish-law-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-grade Danish legal research MCP server with comprehensive statute coverage and EU law cross-references",
   "type": "module",
   "main": "dist/index.js",
