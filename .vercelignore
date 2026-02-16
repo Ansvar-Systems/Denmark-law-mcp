@@ -1,0 +1,7 @@
+data/database.db
+data/*.db
+data/seed/
+scripts/
+__tests__/
+fixtures/
+*.sarif
