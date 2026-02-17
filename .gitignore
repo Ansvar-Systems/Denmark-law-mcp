@@ -101,3 +101,6 @@ temp/
 .serena/
 .claude/
 .vercel
+
+# Local security scan artifacts
+gitleaks.sarif
